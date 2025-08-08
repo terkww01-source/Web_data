@@ -13,8 +13,6 @@ Jinja2==3.1.2
 eventlet==0.33.3
 gunicorn==21.2.0
 
----
-
 # render.yaml (for Render deployment)
 services:
   - type: web
@@ -34,12 +32,8 @@ services:
       - key: PORT
         value: 10000
 
----
-
 # Procfile (alternative for Heroku-style deployment)
 web: python server_dashboard.py
-
----
 
 # .env (environment variables template)
 FLASK_ENV=production
@@ -49,7 +43,6 @@ ADMIN_PASSWORD=your-secure-password
 PORT=10000
 DATABASE_URL=sqlite:///dashboard.db
 
----
 
 # gunicorn.conf.py (production WSGI server config)
 import os
@@ -67,7 +60,7 @@ accesslog = "-"
 errorlog = "-"
 loglevel = "info"
 
----
+
 
 # docker/Dockerfile (if you prefer Docker deployment)
 FROM python:3.11-slim
@@ -99,7 +92,6 @@ ENV PORT=10000
 # Run the application
 CMD ["python", "server_dashboard.py"]
 
----
 
 # docker-compose.yml (for local development)
 version: '3.8'
@@ -120,7 +112,6 @@ services:
       - ./dashboard.db:/app/dashboard.db
     restart: unless-stopped
 
----
 
 # config.py (configuration management)
 import os
@@ -173,7 +164,6 @@ config = {
     'default': DevelopmentConfig
 }
 
----
 
 # startup.sh (startup script for server)
 #!/bin/bash
@@ -200,7 +190,6 @@ fi
 echo "Starting server on port $PORT..."
 python server_dashboard.py
 
----
 
 # client_config.py (configuration for client)
 import os
@@ -263,7 +252,6 @@ class ClientConfig:
         ]
     }
 
----
 
 # deploy_instructions.md
 # Deployment Instructions
@@ -346,7 +334,6 @@ python client_agent.py --standalone
 - Server logs: Available in Render dashboard
 - Client logs: Check `system_agent.log` on client systems
 
----
 
 # README.md
 # System Control Dashboard
@@ -440,7 +427,6 @@ CONFIG = {
 This project is for educational and authorized system administration purposes only. 
 Ensure you have proper authorization before deploying on any systems.
 
----
 
 # Additional Templates (continued)
 
