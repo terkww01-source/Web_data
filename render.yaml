@@ -1,17 +1,18 @@
-services:
-  - type: web
-    name: system-control-dashboard
-    env: python
-    buildCommand: pip install -r requirements.txt
-   startCommand: gunicorn server_dashboard:app
-    envVars:
-      - key: FLASK_ENV
-        value: production
-      - key: SECRET_KEY
-        generateValue: true
-      - key: ADMIN_USERNAME
-        value: admin
-      - key: ADMIN_PASSWORD
-        value: your-secure-password-here
-      - key: PORT
-        value: 10000
+#services:
+#  - type: web
+ #   name: system-control-dashboard
+  #  env: python
+   # buildCommand: pip install -r requirements.txt
+   #startCommand: gunicorn server_dashboard:app
+#    envVars:
+#      - key: FLASK_ENV
+#        value: production
+#      - key: SECRET_KEY
+#        generateValue: true
+#      - key: ADMIN_USERNAME
+#        value: admin
+#      - key: ADMIN_PASSWORD
+#        value: your-secure-password-here
+#      - key: PORT
+#        value: 10000
+
